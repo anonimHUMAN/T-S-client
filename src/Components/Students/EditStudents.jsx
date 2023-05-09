@@ -104,7 +104,7 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in4" className="form-label">Phone</label>
-                        <input ref={inp4} type="number" className="form-control" id="in4" />
+                        <input ref={inp4} type="text" className="form-control" id="in4" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Mother number</label>

@@ -1,5 +1,4 @@
 export default ({ data, th }) => {
-    console.log(data, th);
     return (
         <table className="table">
             <thead>

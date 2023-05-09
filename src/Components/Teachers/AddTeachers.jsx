@@ -4,13 +4,13 @@ import axios from "axios"
 import config from "../../config"
 import Alert from "../Alert"
 export default () => {
+    let test = 2
     let inp1 = useRef(null)
     let inp2 = useRef(null)
     let inp3 = useRef(null)
     let inp4 = useRef(null)
     let inp5 = useRef(null)
     let inp6 = useRef(null)
-
     let [message, setMessage] = useState(false)
     const gcv = (inp) => {
         return inp.current.value
@@ -38,10 +38,14 @@ export default () => {
             inp4.current.value = ''
             inp5.current.value = ''
             inp6.current.value = ''
-            alert("Success!!!")
+            // alert("Successed!!!")
+            getMessage("Successed!!!")
+            test = 1
         } else {
-            getMessage()
+            getMessage("Enter all data!!!")
+            test = 2
         }
+        // console.log(test);
     }
     let [teachers, setTechers] = useState([])
     const fetchTecher = async () => {
@@ -54,8 +58,7 @@ export default () => {
     return (
         <>
             <Nav />
-            {message && <Alert />}
-
+            {message ? <Alert text={test} /> : false}
             <div className="container pt-5">
                 <h1 className="mb-5">Add teacher</h1>
                 <form className="row">
@@ -73,7 +76,7 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in4" className="form-label">Phone</label>
-                        <input ref={inp4} type="number" className="form-control" id="in4" />
+                        <input ref={inp4} type="text" className="form-control" id="in4" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Subject</label>
@@ -83,7 +86,6 @@ export default () => {
                         <label htmlFor="in6" className="form-label">Password</label>
                         <input ref={inp6} type="password" autoComplete="on" className="form-control" id="in6" />
                     </div>
-
                     <button type="button" onClick={checkInp} className="btn btn-primary">Submit</button>
                 </form>
             </div>

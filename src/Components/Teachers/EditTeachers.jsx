@@ -24,7 +24,7 @@ export default () => {
         return (< Alert status={message} />)
     }
     const checkInp = async () => {
-        if (gcv(inp1) && gcv(inp2) && gcv(inp3) && gcv(inp4) && gcv(inp5) && gcv(inp6)) {
+        if (gcv(inp1) || gcv(inp2) || gcv(inp3) || gcv(inp4) || gcv(inp5) || gcv(inp6)) {
             let user = {
                 firstName: gcv(inp1),
                 lastName: gcv(inp2),
@@ -33,9 +33,7 @@ export default () => {
                 password: gcv(inp6),
                 subject: gcv(inp5)
             }
-            console.log(user);
             let res = await axios.put(`${config.url}/teachers/${inpId.current.value}`, user)
-            console.log(res);
         } else {
             getMessage("Malumotni to`liq kiriting", "danger")
         }
@@ -79,7 +77,7 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in4" className="form-label">Phone</label>
-                        <input ref={inp4} type="number" className="form-control" id="in4" />
+                        <input ref={inp4} type="text" className="form-control" id="in4" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Subject</label>

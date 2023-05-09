@@ -4,6 +4,7 @@ import Alert from "../Alert"
 import axios from "axios"
 import config from "../../config"
 export default () => {
+    let test = 2
     let inp1 = useRef(null)
     let inp2 = useRef(null)
     let inp3 = useRef(null)
@@ -16,17 +17,15 @@ export default () => {
     let inp10 = useRef(null)
     let inp11 = useRef(null)
     let inp12 = useRef(null)
-
-    let [message, setMessage] = useState(true)
+    let [message, setMessage] = useState(false)
     const gcv = (inp) => {
         return inp.current.value
     }
-    const getMessage = (text, color) => {
+    const getMessage = () => {
         setMessage(true)
         setTimeout(() => {
-            setMessage(true)
+            setMessage(false)
         }, 2000)
-        return (< Alert status={message} />)
     }
     const checkInp = async () => {
         if (gcv(inp1) && gcv(inp2) && gcv(inp3) && gcv(inp4) && gcv(inp5) && gcv(inp6) && gcv(inp7) && gcv(inp8) && gcv(inp9) && gcv(inp10) && gcv(inp11) && gcv(inp12)) {
@@ -50,11 +49,11 @@ export default () => {
                     }
                 ]
             }
-            console.log(user);
             let res = await axios.post(`${config.url}/students`, user)
-            console.log(res);
+            test = 1
         } else {
-            getMessage("Malumotni to`li kiriting", "danger")
+            getMessage("Enter all data!!!", "danger")
+            test = 2
         }
         inp1.current.value = ''
         inp2.current.value = ''
@@ -81,6 +80,7 @@ export default () => {
     return (
         <>
             <Nav />
+            {message ? <Alert text={test} /> : false}
             <div className="container pt-5">
                 <h1 className="mb-5">Add student</h1>
                 <form className="row">
@@ -98,7 +98,7 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in4" className="form-label">Phone</label>
-                        <input ref={inp4} type="number" className="form-control" id="in4" />
+                        <input ref={inp4} type="text" className="form-control" id="in4" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Mother number</label>
