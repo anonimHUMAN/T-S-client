@@ -1,7 +1,7 @@
 export default () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <nav className="navbar navbar-expand-lg bg-body-tertiary user-select-none">
                 <div className="container">
                     <a className="navbar-brand" href="/">Navbar</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,15 @@ export default () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/students">Students</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/groups">Teacher groups</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/addStudentToGroup">Add student to group</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/delStudentFromGroup">Delete student to group</a>
                             </li>
                         </ul>
                     </div>

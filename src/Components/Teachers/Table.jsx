@@ -1,4 +1,9 @@
 export default ({ data, th }) => {
+    const icon = (item) => {
+        console.log(item);
+        { navigator.clipboard.writeText(item) }
+        alert(`This ${item} copied!!!`)
+    }
     return (
         <table className="table">
             <thead>
@@ -14,7 +19,8 @@ export default ({ data, th }) => {
                     return (
                         <tr key={item._id}>
                             <th scope="row">{i + 1}</th>
-                            <td>{item._id}</td>
+                            {/* <td>{item._id}</td> */}
+                            <td onClick={() => { icon(item._id) }}><ion-icon name="copy-outline"></ion-icon></td>
                             <td>{item.firstName}</td>
                             <td>{item.lastName}</td>
                             <td>{item.email}</td>

@@ -1,5 +1,4 @@
-export default ({ text }) => {
-    // console.log(text);
+export default () => {
     const style = {
         position: "absolute",
         top: "60px",
@@ -11,19 +10,9 @@ export default ({ text }) => {
     const active = {
         right: (status ? "5px" : "0%")
     }
-    let tTest = ""
-    console.log();
-    if (text == 1) {
-        tTest = "Success..."
-    } else if (text == 2) {
-        tTest = "Enter all data!!!"
-    } else {
-        tTest = "Something wrong..."
-    }
     return (
         <div className="alert alert-primary active" style={{ ...style, ...active }} role="alert">
-            {/* {text} */}
-            {tTest}
+            Enter all data for teacher!!!
         </div>
     )
 }

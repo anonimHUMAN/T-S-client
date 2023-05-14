@@ -12,14 +12,13 @@ export default () => {
         })
             .then(res => res.json())
             .then(data => setTechers(data.DATA))
-        alert(`${inp1.current.value} this id deleted!!!`);
+        alert(`Teacher deleted successfully!!!`);
         inp1.current.value = ''
     }
-    // inp1 = ''
     return (
         <>
             <Nav />
-            <div className="container pt-5">
+            <div className="container pt-5 user-select-none">
                 <h1 className="mb-5">Delete teacher</h1>
                 <form className="row">
                     <div className="col-6">

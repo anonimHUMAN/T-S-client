@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import Nav from "../Nav"
-// import Alert from "../Alert"
 import axios from "axios"
 import config from "../../config"
 export default () => {
@@ -24,7 +23,7 @@ export default () => {
         return (< Alert status={message} />)
     }
     const checkInp = async () => {
-        if (gcv(inp1) || gcv(inp2) || gcv(inp3) || gcv(inp4) || gcv(inp5) || gcv(inp6)) {
+        if (gcv(inp1) && gcv(inp2) && gcv(inp3) && gcv(inp4) && gcv(inp5) && gcv(inp6)) {
             let user = {
                 firstName: gcv(inp1),
                 lastName: gcv(inp2),
@@ -34,8 +33,10 @@ export default () => {
                 subject: gcv(inp5)
             }
             let res = await axios.put(`${config.url}/teachers/${inpId.current.value}`, user)
+            alert("The teacher was successfully changed!!!")
         } else {
-            getMessage("Malumotni to`liq kiriting", "danger")
+            // getMessage("Enter the complete information!!!", "danger")
+            alert("Enter the complete information!!!")
         }
         inpId.current.value = ''
         inp1.current.value = ''
@@ -56,7 +57,7 @@ export default () => {
     return (
         <>
             <Nav />
-            <div className="container pt-5">
+            <div className="container pt-5 user-select-none">
                 <h1 className="mb-5">Edit teacher</h1>
                 <form className="row">
                     <div className="mb-3 col-12">
@@ -77,7 +78,7 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in4" className="form-label">Phone</label>
-                        <input ref={inp4} type="text" className="form-control" id="in4" />
+                        <input ref={inp4} type="number" className="form-control" id="in4" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Subject</label>

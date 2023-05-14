@@ -27,7 +27,6 @@ export default () => {
         setTimeout(() => {
             setMessage(true)
         }, 2000)
-        return (< Alert status={message} />)
     }
     const checkInp = async () => {
         if (gcv(inp1) && gcv(inp2) && gcv(inp3) && gcv(inp4) && gcv(inp5) && gcv(inp6) && gcv(inp7) && gcv(inp8) && gcv(inp9) && gcv(inp10) && gcv(inp11) && gcv(inp12)) {
@@ -51,11 +50,10 @@ export default () => {
                     }
                 ]
             }
-            console.log(user);
             let res = await axios.put(`${config.url}/students/${inpId.current.value}`, user)
-            console.log(res);
+            alert("Studdent updated successfully!!!")
         } else {
-            getMessage("Malumotni to`li kiriting", "danger")
+            alert("Enter all information for student!!!")
         }
         inpId.current.value = ''
         inp1.current.value = ''
@@ -75,7 +73,6 @@ export default () => {
     const fetchStudent = async () => {
         let res = await axios.get(`${config.url}/students`)
         setStudents(res.data.data);
-        // console.log(res.data.data)
     }
     useEffect(() => {
         fetchStudent()
@@ -83,11 +80,11 @@ export default () => {
     return (
         <>
             <Nav />
-            <div className="container p-5">
+            <div className="container p-5 user-select-none">
                 <h1 className="mb-5">Edit student</h1>
                 <form className="row">
                     <div className="mb-3 col-12">
-                        <label htmlFor="in1" className="form-label">Id</label>
+                        <label htmlFor="in1" className="form-label">Student id</label>
                         <input ref={inpId} type="text" className="form-control" id="in1" />
                     </div>
                     <div className="mb-3 col-6">
@@ -108,11 +105,11 @@ export default () => {
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Mother number</label>
-                        <input ref={inp5} type="number" className="form-control" id="in5" />
+                        <input ref={inp5} type="text" className="form-control" id="in5" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in5" className="form-label">Father number</label>
-                        <input ref={inp6} type="number" className="form-control" id="in5" />
+                        <input ref={inp6} type="text" className="form-control" id="in5" />
                     </div>
                     <div className="mb-3 col-6">
                         <label htmlFor="in6" className="form-label">Password</label>

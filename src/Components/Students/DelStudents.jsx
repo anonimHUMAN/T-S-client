@@ -7,19 +7,22 @@ export default () => {
     let inp1 = useRef(null)
 
     function delStudent() {
-        fetch(`${config.url}/students/${inp1.current.value}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => setStudents(data.DATA))
-        alert(`${inp1.current.value} this id deleted!!!`);
-        inp1.current.value = ''
+        if (inp1.current.value) {
+            fetch(`${config.url}/students/${inp1.current.value}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => setStudents(data.DATA))
+            alert(`Student deleted successfully!!!`);
+            inp1.current.value = ''
+        } else {
+            alert("Enter id for student!!!")
+        }
     }
-    // inp1 = ''
     return (
         <>
             <Nav />
-            <div className="container pt-5">
+            <div className="container pt-5 user-select-none">
                 <h1 className="mb-5">Delete student</h1>
                 <form className="row">
                     <div className="col-6">

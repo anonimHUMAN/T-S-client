@@ -15,7 +15,7 @@ export default () => {
     return (
         <>
             <Nav />
-            <div className="container pt-5">
+            <div className="container pt-5 user-select-none">
                 <div>
                     <a href="/teachers/add" className="btn btn-primary mb-3">Add  teacher</a>
                     <a href="/teachers/del" className="btn btn-primary mb-3 ms-5">Delete  teacher</a>
