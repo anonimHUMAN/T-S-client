@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.admin {
+    position: relative;
+}
+
+.admin>#dropdown {
+    position: absolute;
+    top: 100%;
+    right: 2%;
+}
+
+.student1>#dropdown {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.teacher {
+    position: relative;
+}
+
+.teacher>#dropdown {
+    position: absolute;
+    top: 100%;
+    right: 2%;
+}
+
+.forBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forBtn .buttun {
+    width: 200px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+    color: aqua;
+    background-color: blue;
+}
+
+.forBtn .buttun:focus {
+    background-color: rgba(37, 37, 37, 0.703);
+}
+
+.forBtn .buttun:hover {
+    color: red;
+    background-color: black;
+}

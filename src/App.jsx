@@ -1,21 +1,19 @@
-import { Route, Routes } from "react-router";
-import Index from "./Components/Index.jsx"
-import Rteacher from "./Routes/RouteTeacher.jsx";
-import Rstudent from "./Routes/RouteStudents.jsx";
-import RGroup from "./Routes/RouteGroup.jsx";
-import StGroupRoute from "./Routes/StGroupRoute.jsx";
+import RouteSignIn from "./Routes/RouteSignIn"
+import RouteTrash from "./Routes/RouteTrash"
+import RouteAdmin from "./Routes/Admin/RouteAdmin"
+import RouteTeacher from "./Routes/Teachers/RouteTeacher"
+import RouteStudents from "./Routes/Students/RouteStudent"
+
 function App() {
-    return (
-        <>
-            <Rteacher />
-            <Rstudent />
-            <RGroup />
-            <StGroupRoute />
-            <Routes>
-                <Route element={<Index />} path="/"></Route>
-            </Routes>
-        </>
-    )
+  return (
+    <>
+      <RouteSignIn />
+      <RouteTrash />
+      <RouteAdmin />
+      <RouteStudents />
+      <RouteTeacher />
+    </>
+  )
 }
 
 export default App

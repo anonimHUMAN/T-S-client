@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.student {
+    position: relative;
+}
+
+.student #dropdown {
+    position: absolute;
+    top: 20%;
+    right: 4%;
+}
