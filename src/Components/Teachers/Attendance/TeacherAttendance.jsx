@@ -39,7 +39,7 @@ function TeacherAttendance() {
                     <div className="container w-10/12 mx-auto py-12">
                         <h1 className="text-gray-500 dark:text-gray-400 text-2xl">{window.localStorage.getItem('title')}</h1>
                         <div className="relative overflow-x-auto shadow-xl sm:rounded-lg">
-                            <AttendanceTable data={groups} th={["Students", "Rating", ""]} />
+                            <AttendanceTable data1={groups} th={["Students", "Rating", ""]} />
                         </div>
                     </div>
                 </div>
