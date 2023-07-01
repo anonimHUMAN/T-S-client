@@ -1,8 +1,11 @@
 export default ({ data, th }) => {
+    const getStId = (id) => {
+        window.localStorage.setItem('StId', id)
+    }
     return (
         <>
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-400 text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-white">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-white">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             #
@@ -30,7 +33,9 @@ export default ({ data, th }) => {
                                     {item.attendance[0] == undefined && 0}
                                     {item.attendance[0] !== undefined && item.attendance.slice(-1).pop().score}
                                 </td>
-                                <td className="px-6 py-4"></td>
+                                <td className="px-6 py-4">
+                                    <a onClick={() => { getStId(item._id) }} href="/showattendance" className="mr-2 post-medium text-lg text-blue-600 dark:text-blue-500 hover:underline"><i className="fa-solid fa-check"></i></a>
+                                </td>
                             </tr>
                         )
                     })}

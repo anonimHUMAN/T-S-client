@@ -4,6 +4,7 @@ import TeacherAttendance from "../../Components/Teachers/Attendance/TeacherAtten
 import TeacherGroups from "../../Components/Teachers/TeacherGroups/TeacherGroups";
 import TeacherOneGroup from "../../Components/Teachers/TeacherGroup/TeacherOneGroup";
 import TeacherStudents from "../../Components/Teachers/TeacherStudents";
+import ShowAttendance777 from "../../Components/Teachers/ShowAttend/ShowAttendance777";
 
 function RouteTeacher() {
     return (
@@ -14,6 +15,7 @@ function RouteTeacher() {
                 <Route element={<TeacherGroups />} path="/teachergroups"></Route>
                 <Route element={<TeacherOneGroup />} path="/teacheronegroup"></Route>
                 <Route element={<TeacherStudents />} path="/teacherstudents"></Route>
+                <Route element={<ShowAttendance777 />} path="/showattendance"></Route>
             </Routes>
         </>
     )

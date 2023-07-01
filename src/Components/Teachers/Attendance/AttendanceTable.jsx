@@ -43,7 +43,7 @@ export default ({ data1, th }) => {
     return (
         <>
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-400 text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-white">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-white">
                     <tr>
                         <th scope="col" className="px-6 py-3">
                             #
@@ -68,7 +68,7 @@ export default ({ data1, th }) => {
                                     {item.attendance[0] == undefined && 0}
                                     {item.attendance[0] !== undefined && item.attendance.slice(-1).pop().score}
                                 </td>
-                                <td className="tab w-full px-6 py-4 text-right w-32 flex gap-12 items-center">
+                                <td className="tab w-full px-6 py-4 text-right flex gap-12 items-center">
                                     <input ref={el => itemsRef.current[i] = el} type="checkbox" className="bg-gray-200 dark:bg-gray-700" />
                                     <input ref={el => itemsRef1.current[i] = el} type="number" inputMode="numeric" className="inp text-gray-900 w-14 h-8 bg-gray-200 dark:bg-gray-700 dark:text-gray-200" />
                                 </td>
