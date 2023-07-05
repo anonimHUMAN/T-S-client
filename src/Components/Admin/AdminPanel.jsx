@@ -5,8 +5,6 @@ import config from "../../qwe/config";
 
 function AdminPanel() {
     const [darkMode, setDarkMode] = useState(true);
-    const [teacher, setTeacher] = useState(false);
-    const [student, setStudent] = useState(false);
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
