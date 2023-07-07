@@ -47,7 +47,7 @@ function AdminStudent() {
     return (
         <>
             <div className={`App ${darkMode ? 'dark' : 'light'}`}>
-                <div className="bg-white dark:bg-gray-900 h-screen pt-10">
+                <div className="bg-white dark:bg-gray-900 pt-10">
                     <div className="text-center fixed top-5  right-6">
                         <button onClick={toggleDarkMode} id="theme-toggle" type="button"
                             className="text-center text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">

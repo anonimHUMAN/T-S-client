@@ -4,6 +4,7 @@ import config from "../../../qwe/config"
 export default ({ data, th }) => {
     const [showS, setShowS] = useState(false)
     const [students, setStudents] = useState([])
+    console.log();
     const toggleShow = () => { setShowS(!showS) }
     const getAllStudents = async () => {
         let res = await axios.get(`${config.url}/teachers/students`, {
@@ -11,7 +12,7 @@ export default ({ data, th }) => {
                 authorization: window.localStorage.getItem("token")
             }
         })
-        setStudents(res.data.student)
+        setStudents(res.data.data)
     }
     const addStudentToGroup = async (id) => {
         let data = {
@@ -32,9 +33,7 @@ export default ({ data, th }) => {
                 authorization: window.localStorage.getItem("token")
             }
         })
-        if (res.data.title === "Deleted") {
-            alert(res.data.title)
-        }
+        alert(res.data.title)
     };
 
     useEffect(() => { getAllStudents() }, [])
@@ -137,7 +136,6 @@ export default ({ data, th }) => {
                                                                 {item.phone}
                                                             </td>
                                                             <td scope="col" className="px-6 py-3 text-left w-32">
-                                                                {/* <button> */}
                                                                 <button onClick={() => { addStudentToGroup(item._id) }}>
                                                                     <i className="fa-solid fa-square-plus"></i>
                                                                 </button>

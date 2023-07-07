@@ -45,11 +45,9 @@ export default ({ data, th, spStudentFunc, spStudent }) => {
                     authorization: window.localStorage.getItem("token")
                 }
             })
-            console.log(res.data.title);
             if (res.data.title === "Student edited") {
                 alert(res.data.title)
             }
-
             inp1.current.value = ''
             inp2.current.value = ''
             inp3.current.value = ''

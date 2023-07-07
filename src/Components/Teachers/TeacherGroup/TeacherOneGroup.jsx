@@ -6,7 +6,7 @@ import config from "../../../qwe/config";
 function TeacherOneGroup() {
     const [darkMode, setDarkMode] = useState(true);
     const [groups, setGroups] = useState([]);
-
+    // console.log(groups);
     const toggleDarkMode = () => { setDarkMode(!darkMode); };
     const teacherGroups = async () => {
         let getId = await axios(`${config.url}/groups/getId`, {

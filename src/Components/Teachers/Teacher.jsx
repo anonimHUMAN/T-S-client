@@ -20,6 +20,14 @@ function Teachers() {
         }
     }
     teacher()
+    const logout = () => {
+        let check = confirm('Are you sure you want to leave the website?')
+        if (check) {
+            let TOKEN = "none"
+            window.localStorage.setItem('token', TOKEN)
+            teacher()
+        }
+    };
     useEffect(() => {
         setTimeout(() => {
             setAni(false)
@@ -37,7 +45,8 @@ function Teachers() {
                         </h4>
                     </div>}
                     <div className="home w-full h-screen flex items-center justify-center gap-16">
-                        <div className="dark text-right fixed top-5  right-6">
+                        <div className="dark text-right fixed top-5 right-6">
+                            <i onClick={logout} className="text-center text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"><ion-icon name="exit-outline"></ion-icon></i>
                             <button onClick={toggleDarkMode} id="theme-toggle" type="button"
                                 className="text-center text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                                 <ion-icon name="invert-mode-outline"></ion-icon>
