@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './style.css'
 import axios from "axios";
 import config from "../../qwe/config";
+import '../Auth/style.css'
 
 function AdminPanel() {
     const [darkMode, setDarkMode] = useState(true);
+    const [ani, setAni] = useState(true);
 
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
+    const toggleDarkMode = () => { setDarkMode(!darkMode); };
     const admin = async () => {
         let data = await axios(`${config.url}/teachers`, {
             headers: {
@@ -20,16 +20,29 @@ function AdminPanel() {
         }
     }
     admin()
+    useEffect(() => {
+        setTimeout(() => {
+            setAni(false)
+        }, 4000);
+    }, [])
+
+
     return (
         <>
             <div className={`App ${darkMode ? 'dark' : 'light'}`}>
-                <main className="bg-white dark:bg-gray-900 h-screen">
+                <main className=" bg-white dark:bg-gray-900 h-screen">
                     <div className="text-center fixed top-5  right-6">
                         <button onClick={toggleDarkMode} id="theme-toggle" type="button"
                             className="text-center text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-3 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
                             <ion-icon name="invert-mode-outline"></ion-icon>
                         </button>
                     </div>
+                    {ani && <div className='lol'>
+                        <h4>
+                            <span>Admin</span>
+                            <span>Panel</span>
+                        </h4>
+                    </div>}
                     <div className="home w-full h-screen flex items-center justify-center gap-16">
                         <div
                             className="w-full max-w-sm bg-gray-200 dark:bg-gray-800 border  border-gray-200 dark:border-gray-700 rounded-lg shadow ">

@@ -70,7 +70,7 @@ export default ({ data1, th }) => {
                                 </td>
                                 <td className="tab w-full px-6 py-4 text-right flex gap-12 items-center">
                                     <input ref={el => itemsRef.current[i] = el} type="checkbox" className="bg-gray-200 dark:bg-gray-700" />
-                                    <input ref={el => itemsRef1.current[i] = el} type="number" inputMode="numeric" className="inp text-gray-900 w-14 h-8 bg-gray-200 dark:bg-gray-700 dark:text-gray-200" />
+                                    <input ref={el => itemsRef1.current[i] = el} type="number" inputMode="numeric" max={10} min={1} className="inp text-gray-900 w-14 h-8 bg-gray-200 dark:bg-gray-700 dark:text-gray-200" />
                                 </td>
                             </tr>
                         )

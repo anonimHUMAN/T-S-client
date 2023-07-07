@@ -39,7 +39,7 @@ function TeacherOneGroup() {
                     <div className="container w-10/12 mx-auto py-12">
                         <h1 className="text-gray-500 dark:text-gray-400 text-2xl">{window.localStorage.getItem('title')}</h1>
                         <div className="relative overflow-x-auto shadow-xl sm:rounded-lg">
-                            <TeacherOneGroupTable data={groups} th={["Full Name", "Rating"]} />
+                            <TeacherOneGroupTable data={groups} th={["Full Name", "Overall score"]} />
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './style.css'
 import axios from "axios";
 import config from "../../qwe/config";
@@ -6,6 +6,7 @@ import config from "../../qwe/config";
 function Teachers() {
     const [darkMode, setDarkMode] = useState(true);
     const [group, setGroup] = useState(false);
+    const [ani, setAni] = useState(true);
 
     const toggleDarkMode = () => { setDarkMode(!darkMode); };
     const teacher = async () => {
@@ -19,11 +20,22 @@ function Teachers() {
         }
     }
     teacher()
+    useEffect(() => {
+        setTimeout(() => {
+            setAni(false)
+        }, 4000);
+    }, [])
 
     return (
         <>
             <div className={`App ${darkMode ? 'dark' : 'light'}`}>
                 <div className="w-full h-screen dark:bg-gray-700">
+                    {ani && <div className='lol'>
+                        <h4>
+                            <span>Teacher</span>
+                            <span>Room</span>
+                        </h4>
+                    </div>}
                     <div className="home w-full h-screen flex items-center justify-center gap-16">
                         <div className="dark text-right fixed top-5  right-6">
                             <button onClick={toggleDarkMode} id="theme-toggle" type="button"

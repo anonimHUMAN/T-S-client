@@ -3,11 +3,10 @@ import { useEffect, useState } from "react"
 import config from "../../../qwe/config"
 export default ({ data, th }) => {
     const [showS, setShowS] = useState(false)
-    const toggleShow = () => { setShowS(!showS) }
     const [students, setStudents] = useState([])
-
+    const toggleShow = () => { setShowS(!showS) }
     const getAllStudents = async () => {
-        let res = await axios.get(`${config.url}/admin/students`, {
+        let res = await axios.get(`${config.url}/teachers/students`, {
             headers: {
                 authorization: window.localStorage.getItem("token")
             }
@@ -20,7 +19,7 @@ export default ({ data, th }) => {
             idGroup: `${window.localStorage.getItem("grId")}`,
             idStudent: `${id}`
         }
-        let res = await axios.post(`${config.url}/admin/manage`, data, {
+        let res = await axios.post(`${config.url}/teachers/manage`, data, {
             headers: {
                 authorization: window.localStorage.getItem("token")
             }
