@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import SignIn from "../Components/Auth/SignIn";
-import Animation from "../Components/Auth/animation";
+import Animation from "../Components/Auth/Animation";
 function RouteSignIn() {
     return (
         <>

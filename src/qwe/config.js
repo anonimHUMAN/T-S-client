@@ -1,5 +1,5 @@
 let config = {
-    url: "http://localhost:3002"
+    url: "https://t-s-server.onrender.com"
 }
 
 export default config
