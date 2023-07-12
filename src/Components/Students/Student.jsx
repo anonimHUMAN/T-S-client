@@ -55,7 +55,7 @@ function Students() {
                             <span>Room</span>
                         </h4>
                     </div>
-                </div>}
+                </div>} 
                 <div className="w-full h-screen dark:bg-gray-700 flex justify-end">
                     <nav className="fixed top-0 right-0 left-0 z-40 w-full flex justify-between items-center mx-auto bg-white border-gray-200 dark:bg-gray-900 p-4">
                         <a className="flex items-center">
