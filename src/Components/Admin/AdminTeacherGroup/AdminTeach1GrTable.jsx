@@ -6,6 +6,13 @@ export default ({ data, th }) => {
     const [students, setStudents] = useState([])
     console.log();
     const toggleShow = () => { setShowS(!showS) }
+    const getTotal = async () => {
+        let res = await axios.get(`${config.url}/routeTeacher/total?idTeacher=${window.localStorage.getItem("teacherId")}&idGroup=${window.localStorage.getItem("grId")}`, {
+            headers: {
+                authorization: window.localStorage.getItem("token")
+            }
+        })
+    }
     const getAllStudents = async () => {
         let res = await axios.get(`${config.url}/teachers/students`, {
             headers: {
@@ -36,7 +43,10 @@ export default ({ data, th }) => {
         alert(res.data.title)
     };
 
-    useEffect(() => { getAllStudents() }, [])
+    useEffect(() => {
+        getAllStudents()
+        getTotal()
+    }, [])
     return (
         <>
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -67,8 +77,7 @@ export default ({ data, th }) => {
                                     {item.firstName}<span> </span>{item.lastName}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {item.attendance[0] == undefined && 0}
-                                    {item.attendance[0] !== undefined && item.attendance.slice(-1).pop().score}
+                                    {item.totalScore}
                                 </td>
                                 <td scope="col" className="px-6 py-3 text-left w-32">
                                     <button onClick={() => { delStudent(item._id) }}>

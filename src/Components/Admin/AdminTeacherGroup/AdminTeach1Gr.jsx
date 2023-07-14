@@ -34,7 +34,7 @@ function AdminTeach1Gr() {
                     <div className="container w-10/12 min-h mx-auto py-12">
                         <h1 className="text-gray-500 dark:text-gray-400 text-2xl">{window.localStorage.getItem('title')}</h1>
                         <div className="relative shadow-xl sm:rounded-lg">
-                            <AdminTeach1GrTable data={groups} th={["Full Name", "Rating"]} />
+                            <AdminTeach1GrTable data={groups} th={["Full Name", "Overall Score"]} />
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,6 @@ export default ({ data, th }) => {
             inp5.current.value = ''
             inp6.current.value = ''
             inp7.current.value = ''
-            window.location.reload()
             let getId = await axios(`${config.url}/groups/getId`, {
                 headers: {
                     authorization: window.localStorage.getItem("token")
