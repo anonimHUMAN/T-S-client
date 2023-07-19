@@ -20,7 +20,10 @@ export default ({ data, th, spTeacherFunc, spTeacher }) => {
     const edit1 = () => { setEdit(!edit); };
     const prof1 = () => { setProf(!prof); };
     const getId = (id) => { setTecherId(id) };
-    const setTeacherId = (id) => { window.localStorage.setItem('teacherId', id) };
+    const setTeacherId = (id) => {
+        window.localStorage.setItem('teacherId', id)
+        window.location.replace("/adminteachergroups")
+    };
 
     const editTeacher = async () => {
         let data = {
@@ -36,10 +39,10 @@ export default ({ data, th, spTeacherFunc, spTeacher }) => {
                 authorization: window.localStorage.getItem("token")
             }
         })
-        window.location.reload()
         if (res.data.title === "Teacher edited") {
             alert(res.data.title)
         }
+        window.location.reload()
 
         inp1.current.value = ''
         inp2.current.value = ''
@@ -129,7 +132,9 @@ export default ({ data, th, spTeacherFunc, spTeacher }) => {
                                     {item.subject}
                                 </td>
                                 <td className="px-6 py-4">
-                                    <a onClick={() => { setTeacherId(item._id) }} href="/adminteachergroups">{item.group.length}</a>
+                                    <button onClick={() => { setTeacherId(item._id) }} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        {item.group.length}
+                                    </button>
                                 </td>
                                 <td className="px-6 py-4 text-right w-32">
                                     <a onClick={edit1} onClickCapture={() => { getId(item._id) }} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"

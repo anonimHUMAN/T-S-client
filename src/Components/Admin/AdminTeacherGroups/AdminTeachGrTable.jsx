@@ -12,6 +12,7 @@ export default ({ data, th }) => {
     const getId = (id, title) => {
         window.localStorage.setItem('grId', id)
         window.localStorage.setItem('title', title)
+        window.location.replace("/adminteacheronegroup")
     };
 
     let inp1 = useRef(null)
@@ -105,7 +106,9 @@ export default ({ data, th }) => {
                                     {i + 1}
                                 </th>
                                 <td className="px-6 py-4">
-                                    <a onClick={() => { getId(item._id, item.title) }} href="/adminteacheronegroup">{item.title}</a>
+                                    <button onClick={() => { getId(item._id, item.title) }} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        {item.title}
+                                    </button>
                                 </td>
                                 <td className="px-6 py-4">
                                     {item.day}
